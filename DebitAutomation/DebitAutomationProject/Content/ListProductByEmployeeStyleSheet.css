@@ -1,0 +1,6 @@
+﻿body {
+    background-image: url(../Upload/waterforlist.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+tr:nth-child(even) {background-color:#808080}

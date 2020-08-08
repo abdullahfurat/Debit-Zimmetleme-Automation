@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Debit.Entity.Product>
+
+@{
+    ViewBag.Title = "ListProductByEmployee";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<h2>Your products have registered</h2>
+
+
+<table class="table  table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductPhoto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            <img src="~/Upload/@item.ProductPhoto" width="50" height="50" class="img-circle" />
+        </td>
+   
+    </tr>
+
+}
+
+</table>

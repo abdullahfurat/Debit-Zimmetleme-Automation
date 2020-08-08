@@ -1,0 +1,36 @@
+﻿@model DebitAutomationProject.Areas.Admin.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "Debit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="margin-left:160px">Debit Product</h2>
+
+@using (Html.BeginForm("Debit", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset style="margin-left:160px">
+
+        @Html.HiddenFor(model => model.Product.ProductID)
+        <br />
+        <p color="#33FF4E">Select Employee:</p>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Product.EmployeeID, Model.EmployeeList)
+            @Html.ValidationMessageFor(model => model.Product.EmployeeID)
+        </div>
+    </fieldset>
+    <br />
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Debit" class="btn btn-danger" />
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

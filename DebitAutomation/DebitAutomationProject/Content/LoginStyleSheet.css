@@ -1,0 +1,8 @@
+﻿body {
+    background-image: url(../Upload/LoginPage.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+#Login{
+    background-color:darkgrey;
+}

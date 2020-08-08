@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Debit.Entity.Product>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Fixture List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddProduct")
+</p>
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductPhoto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <img src="~/Upload/@item.ProductPhoto" width="50" height="50" class="img-circle" />
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.EmployeeID)
+            </th>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }, new { @style = "color:#17202A" }) |
+                @Html.ActionLink("Debit", "Debit", new { id = item.ProductID }, new { @style = "color:#17202A" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID }, new { @style = "color:#17202A" })
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,64 @@
+﻿@model DebitAutomationProject.Areas.Admin.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="margin-left:160px">Add Fixture</h2>
+
+@using (Html.BeginForm("AddProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <div class="form-horizontal" style="margin-left:160px">
+            <div>
+                @Html.DisplayNameFor(model => model.Product.ProductName)
+            </div>
+            <div>
+                @Html.EditorFor(model => model.Product.ProductName)
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.Product.Brand)
+            </div>
+            <div>
+                @Html.EditorFor(model => model.Product.Brand)
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.Product.Description)
+            </div>
+            <div>
+                @Html.EditorFor(model => model.Product.Description)
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.Product.ProductPhoto)
+            </div>
+            <div>
+                <input type="file" name="photo" id="photo" />
+            </div>
+            <div>
+                <br>
+                <p>Select Employee:</p>
+            </div>
+            <div>
+                @Html.DropDownListFor(model => model.Product.EmployeeID, Model.EmployeeList)
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add Fixture" class="btn btn-danger" />
+            </div>
+        </div>
+    </fieldset>
+
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

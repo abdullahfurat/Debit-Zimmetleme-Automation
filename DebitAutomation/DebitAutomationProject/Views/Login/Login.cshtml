@@ -1,0 +1,67 @@
+﻿@model Debit.Entity.Employee
+
+@{
+    ViewBag.Title = "Login";
+    Layout =null;
+
+}
+<link href="~/Content/LoginStyleSheet.css" rel="stylesheet" />
+<h2 style="margin-left:500px">Login </h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+            </div>
+            @Html.EditorFor(model => model.Email, new { htmlAttributes=new { @placeholder = "Please Enter Your Email" } })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmployeeID)
+        </div>
+        <div class="editor-field input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-asterisk"></span>
+            </div>
+            @Html.EditorFor(model => model.EmployeeID)
+            @Html.ValidationMessageFor(model => model.EmployeeID)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleId, new { style = "color:#d1d1e0" })
+        </div>
+        <div class="editor-field input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-star"></span>
+            </div>
+            @Html.EditorFor(model => model.RoleId)
+            @Html.ValidationMessageFor(model => model.RoleId)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password,new { style = "color:#d1d1e0" })
+        </div>
+        <div class="editor-field input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-lock"></span>
+            </div>
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @placeholder = "Please Enter Your Password", @type = "password" } })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <br />
+        <form method="get" action="~/Login/Login">
+            <input type="submit" value="Login" id="Login" />
+        </form>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+}
+

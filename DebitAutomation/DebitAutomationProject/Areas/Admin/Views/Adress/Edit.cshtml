@@ -1,0 +1,47 @@
+﻿@model Debit.Entity.Adress
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update Address Information</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(t => t.AdressId)
+
+    <table>
+        <tr>
+            <td>@Html.DisplayNameFor(t => t.Country)</td>
+            <td>@Html.EditorFor(t => t.Country)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(t => t.City)</td>
+            <td>@Html.EditorFor(t => t.City)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(t => t.Town)</td>
+            <td>@Html.EditorFor(t => t.Town)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(t => t.Street)</td>
+            <td>@Html.EditorFor(t => t.Street)</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Update" class="btn-info" />
+            </td>
+        </tr>
+    </table>
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "List", new { @style = "color:yellow" })
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

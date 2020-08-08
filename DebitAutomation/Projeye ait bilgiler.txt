@@ -1,0 +1,25 @@
+PROJENÝN AMACI:Projenin amacý bir ofise yada þirkete ait demirbaþlarýn(eþyalarýn) çalýþanlara zimmetlenmesi ve bunun takibidir.
+Ayný zamanda çalýþanlarýn üzerinde adresleme yapýlabilmektedir.Projede databaseFirst kullanýlmýþtýr.
+
+PROJENÝN YAPABÝLDÝKLERÝ:Adress bilgisi ekleme,silme,listeleme ve bir çalýþan üzerine adresleme yapabilmektedir.
+Demirbaþlar için ekleme,silme,listeleme ve zimmetleme yapýlabilmektedir.
+Çalýþanlar için ekleme,silme,listeleme yapýlýr.Adressleme ve zimmetleme adress ve product viewlarý üzerinden yapýlýr.
+Login yapýlabilmektedir.Ayrýca yönetici veya çalýþana göre ayrý sayfalara yönlendirme yapýlýr.Yönetici giriþ yaptýktan sonra
+yukardaki iþlevlerin hepsini gerçekleþtirebilir.Çalýþan giriþ yaptýðýnda ise sadece üzerindeki demirbaþlarýn listesini 
+görebildiði bir sayfaya yönlendirilir.
+
+NEREDE ZORLANDIM:Baþta katmanlý mimaride sýnýflarý kullanýrken zorlandým.Fakat öðrendikten sonra sýnýflarý kolayca kullanabildim.
+Layout sayfalarýný düzenlerken zorlandým.Adressleme yaparken zorlandým; baþta çok hata aldým fakat sonra düzelttim.
+Resim ekleme kýsýmlarýnda zorlandým ama elimizdeki projeden yardým aldým.
+
+Yeni ne öðrendim:Layout ve renderbody nin ne demek olduðunu kurs esnasýnda kaçýrmýþým ;onlarý öðrendim.
+Birkaç hatanýn ne anlama geldiði ve nasýl çözeceðimi öðrendim(StackOverflow sayesinde).Bir kaç bootsrap sýnýfýný
+nasýl kullanacaðýmý öðrendim.Mvc'nin model sýnýflarýný kullanmayý tamamen anladým.Html.EditorFor,LabelFor gibi html taglerine nasýl 
+özellik,sýnýf vs eklenebileceðini öðrendim.
+
+Eksikler:
+1)LogOut yapamadým.
+2)Demirbaþlar(Product diye geçiyor projenin içinde)için waste(atýk) tablosunu  yapamadým.Database'in update kýsmý tabloyu visual studio da
+göstermedi.
+3)Çalýþan ekleme kýsmýnda resim ekleme kýsmýnda hata var.Fakat güncelleme kýsmýnda resim eklenebiliyor.Onun dýþýnda product için resim 
+kýsýmlarý düzgün çalýþmakta.

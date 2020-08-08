@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Debit.Entity.Employee>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddEmployee")
+</p>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeSurName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeePhoto)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeSurName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                <img src="~/Upload/@item.EmployeePhoto" width="50" height="50" class="img-thumbnail" />
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID }, new { @style = "color:green" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeID }, new { @style = "color:green" })
+            </td>
+        </tr>
+    }
+
+</table>

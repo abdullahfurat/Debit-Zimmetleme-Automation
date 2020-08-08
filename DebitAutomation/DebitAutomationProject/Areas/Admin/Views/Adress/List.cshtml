@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Debit.Entity.Adress>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Adress List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddAdress")
+</p>
+<table class="table table-bordered  table-hover">
+    <tr style="background-color: #4CAF50">
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Town)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Town)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AdressId }, new { @style = "color:red" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AdressId }, new { @style = "color:red" }) |
+                @Html.ActionLink("Adressing", "Adressing", new { id = item.AdressId }, new { @style = "color:red" })
+            </td>
+        </tr>
+    }
+</table>

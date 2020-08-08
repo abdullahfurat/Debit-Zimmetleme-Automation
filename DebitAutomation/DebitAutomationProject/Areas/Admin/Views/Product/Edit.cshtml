@@ -1,0 +1,68 @@
+﻿@model DebitAutomationProject.Areas.Admin.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2 style="margin-left:160px">Update Fixture</h2>
+
+@using (Html.BeginForm("Edit", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+    <fieldset style="margin-left:160px">
+
+        @Html.HiddenFor(model => model.Product.ProductID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Product.ProductName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Product.ProductName)
+            @Html.ValidationMessageFor(model => model.Product.ProductName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Product.Brand)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Product.Brand)
+            @Html.ValidationMessageFor(model => model.Product.Brand)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Product.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Product.Description)
+            @Html.ValidationMessageFor(model => model.Product.Description)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Product.ProductPhoto)
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.Product.ProductPhoto)
+            <input type="file" name="photo" />
+            @Html.ValidationMessageFor(model => model.Product.ProductPhoto)
+        </div>
+        <br />
+        <p color="#33FF4E">Select Employee:</p>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Product.EmployeeID, Model.EmployeeList)
+            @Html.ValidationMessageFor(model => model.Product.EmployeeID)
+        </div>
+    </fieldset>
+    <br />
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Update" class="btn btn-danger" />
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
