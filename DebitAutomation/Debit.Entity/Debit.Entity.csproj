@@ -108,6 +108,7 @@
       <DependentUpon>DebitEntities.edmx</DependentUpon>
       <LastGenOutput>DebitEntities.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="DebitEntities.edmx.sql" />
     <Content Include="DebitEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DebitEntities.edmx</DependentUpon>
